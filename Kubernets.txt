@@ -1,0 +1,35 @@
+KUBERNETES
+Roda um Pod de Nginx
+    $ kubectl run nginx --image=nginx
+    $ kubectl get pods
+
+To create a DEPLOYMENT using imperative command, use kubectl create:
+    $ kubectl create deployment nginx --image=nginx
+
+
+REPLICAS [
+To get information about the replication controller
+    $ kubectl create -f rc-definition.yml
+    $ kubectl get replicationcontroller
+
+
+To get information about REPLICA SET
+    $ kubectl create -f replicaset.yml
+    $ kubectl get replicaset
+    $ kubectl get pods
+
+] -> usado para monitorar a quantidade de pods ativos e garantir que sempre tenha um número "X" de pods.
+
+To SCALE
+    $ kubectl replace -f replicaset-definition.yml
+    $ kubectl scale --replica=6 replicaset-definition.yml
+    $ kubectl scale --replica=6 replicaset(type) myapp-replicaset(name)
+
+To DELETE
+    $ kubectl delete replicaset myapp-replicaset
+
+SERVICES [
+To create a NODEPORT
+    $ kubectl create -f service-definition-node-port.yml
+    $ kubectl get services
+]
