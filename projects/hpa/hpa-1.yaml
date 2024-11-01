@@ -1,14 +1,14 @@
-apiVersion: autoscaling/v2beta2
+---
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa-nuageit-delivery-bhairport-api-strapi
-  namespace: hpa-deployment
+  name: hpa-{nome}
+  namespace: {namespace.do.alvo}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: nuageit-delivery-bhairport-api-strapi
-    namespace: bhairport-strapi-production # Adicione essa linha
+    name: {deployment.alvo}
   minReplicas: 1
   maxReplicas: 10
   metrics:
