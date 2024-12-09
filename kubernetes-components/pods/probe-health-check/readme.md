@@ -1,0 +1,1 @@
+As probes são essenciais para a resiliência e a robustez de aplicações em ambientes de contêiner, pois ajudam a garantir que os serviços estejam sempre disponíveis e funcionando corretamente. Elas permitem que o Kubernetes gerencie automaticamente a saúde dos contêineres, reiniciando-os ou redirecionando o tráfego conforme necessário.
