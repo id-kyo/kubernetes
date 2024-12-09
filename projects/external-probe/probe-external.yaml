@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-check
+  namespace: <namespace>
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: external-check
+  template:
+    metadata:
+      labels:
+        app: external-check
+    spec:
+      containers:
+      - name: external-check
+        image: <your-docker-repo>/external-check:latest
+        # Execute o script a cada 30 segundos
+        command: ["sh", "-c", "while true; do /usr/local/bin/external-check.sh; sleep 30; done"]
